@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Componentes.iml" filepath="$PROJECT_DIR$/Componentes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ValidacaoCPF/ValidacaoCPF.iml" filepath="$PROJECT_DIR$/ValidacaoCPF/ValidacaoCPF.iml" />
+    </modules>
+  </component>
+</project>
