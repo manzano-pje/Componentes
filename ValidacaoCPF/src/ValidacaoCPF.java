@@ -1,15 +1,21 @@
 
+
+/**
+ *  validacao CPF
+ *  O componente tem como objetivo efetuar a validação
+ *  do dígito verificador do CPF.
+ *
+ *
+ */
 public class ValidacaoCPF {
     public static void main(String[] args){
         ValidacaoCPF ValidacaoCPF = new ValidacaoCPF();
 
         String teste = "06326651810"; // cpf para teste
         ValidacaoCPF.obterNumeracaoCPF(teste);
-
         ValidacaoCPF.obterDiv(ValidacaoCPF.obterSomatorio1(), 9);
         ValidacaoCPF.obterDiv(ValidacaoCPF.obterSomatorio2(), 10);
         Boolean verificacao = ValidacaoCPF.verificarCpf(ValidacaoCPF.numeracao[9], ValidacaoCPF.numeracao[10]);
-        //System.out.print("Div: " + ValidacaoCPF.numeracao[9] + ValidacaoCPF.numeracao[10]);
 
         if (verificacao == true)
             System.out.println(" verdadeiro");
@@ -20,7 +26,15 @@ public class ValidacaoCPF {
     //*************************************
     private int numeracao[] = new int[11];
     private String digito;
-    
+
+
+    /**
+     * obter numeracao c p f
+     * Separa os 9 primeiros dígits do CPF dos dígitos verificadores
+     * @param cpfBruto
+     * @return {@link String}
+     * @see String
+     */
     private String obterNumeracaoCPF(String cpfBruto){
 
         if(cpfBruto == "11111111111" || cpfBruto == "22222222222" || cpfBruto == "33333333333"
@@ -41,7 +55,11 @@ public class ValidacaoCPF {
         return cpf;
     }
 
-        //***********************************************
+        /**
+         * obter somatorio1
+         * Calcula o valor do 1º dígito
+         * @return {@link int}
+         */
     private int obterSomatorio1(){
         int somatorio = 0;
         int[] multiplicadores = {10, 9, 8, 7, 6, 5, 4, 3, 2};
@@ -52,7 +70,11 @@ public class ValidacaoCPF {
         return somatorio;
     }
 
-        //*****************************************
+    /**
+     * obter somatorio1
+     * Calcula o valor do 1º dígito
+     * @return {@link int}
+     */
     private int obterSomatorio2(){
         int somatorio = 0;
         int[] multiplicadores = {11, 10, 9, 8, 7, 6, 5, 4, 3, 2};
@@ -64,7 +86,12 @@ public class ValidacaoCPF {
         return somatorio;
     }
 
-        //*****************************************
+    /**
+     * obter div
+     * Calcula o dígito verificador
+     * @param soma soma
+     * @param t t
+     */
     private void obterDiv(int soma, int t){
         int modulo;
         int resto;
@@ -83,7 +110,14 @@ public class ValidacaoCPF {
         }
     }
 
-        //********************************************
+    /**
+     * verificar cpf
+     * Valida o diígito verificador digitado com o calculado
+     * informando se o mesmo é válido o não
+     * @param dv1 dv1
+     * @param dv2 dv2
+     * @return {@link boolean}
+     */
     private boolean verificarCpf(int dv1,  int dv2){
         String verificador = Integer.toString(dv1) + Integer.toString(dv2);
         boolean retorno;
